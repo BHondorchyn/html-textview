@@ -47,7 +47,7 @@ public class HtmlResImageGetter implements Html.ImageGetter {
             return null;
         } else {
             Drawable d = context.getResources().getDrawable(id);
-            d.setBounds(0, 0, 50, 50);
+            d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
             return d;
         }
     }
