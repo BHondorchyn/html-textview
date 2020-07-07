@@ -143,7 +143,7 @@ public class HtmlHttpImageGetter implements ImageGetter {
                 return;
             }
             // set the correct bound according to the result from HTTP call
-            urlDrawable.setBounds(0, 0, (int) (result.getIntrinsicWidth() * scale), (int) (result.getIntrinsicHeight() * scale));
+            urlDrawable.setBounds(0, 0, 50, 50);
 
             // change the reference of the current drawable to the result from the HTTP call
             urlDrawable.drawable = result;
@@ -166,7 +166,7 @@ public class HtmlHttpImageGetter implements ImageGetter {
                 InputStream is = fetch(urlString);
                 Drawable drawable = new BitmapDrawable(res, is);
                 scale = getScale(drawable);
-                drawable.setBounds(0, 0, (int) (drawable.getIntrinsicWidth() * scale), (int) (drawable.getIntrinsicHeight() * scale));
+                drawable.setBounds(0, 0, 50, 50);
                 return drawable;
             } catch (Exception e) {
                 return null;
@@ -192,7 +192,7 @@ public class HtmlHttpImageGetter implements ImageGetter {
                 scale = getScale(decoded);
                 BitmapDrawable b = new BitmapDrawable(res, decoded);
 
-                b.setBounds(0, 0, (int) (b.getIntrinsicWidth() * scale), (int) (b.getIntrinsicHeight() * scale));
+                b.setBounds(0, 0, 50, 50);
                 return b;
             } catch (Exception e) {
                 return null;
